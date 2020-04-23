@@ -1,0 +1,49 @@
+using System;
+
+namespace if_test
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string Number, name;
+            String classno = "", classname = ""; //문자열에 값을 대입할 때 ""필요
+            int idx_classNo = 4;
+            int len_classNo = 3;
+            int Max_input = 3;
+
+            String classNO_IE = "001";
+            String classNo_MA = "002";
+            String classNo_CC = "003";
+
+            for (int i = 0; i < Max_input; i++)
+            {
+                Console.WriteLine("학번을 입력하세요.");
+                // (001:산공과, 002: 수학과, 003: 컴공과)
+                Number = Console.ReadLine();
+                classno = Number.Substring(idx_classNo, len_classNo);
+                Console.WriteLine("이름을 입력하세요.");
+                name = Console.ReadLine();
+
+                if (classno == classNO_IE)
+                {
+                    classname = "산공과";
+                }
+                else if (classno == classNo_MA)
+                {
+                    classname = "수학과";
+                }
+                else if (classno == classNo_CC)
+                {
+                    classname = "컴공과";
+                }
+
+                Console.WriteLine("학과:{0}, 학번:{1}, 이름:{2}", classname, Number, name);
+            }
+            Console.WriteLine("프로그램을 종료합니다.");
+        }
+    }
+}
+//       012345678
+// 학번: 201702963
+// classno = number.Substring(4, 3);
