@@ -63,7 +63,7 @@ namespace if_test
                     if (Finish_answer == "N")           // N을 입력받으면 반복문을 종료
                     {
                         Console.WriteLine("--------------------------------------------");
-                        Console.WriteLine("프로그램을 종료합니다");
+                        Console.WriteLine("프로그램을 종료합니다. 감사합니다.");
                         Console.WriteLine("--------------------------------------------");
 
                         for (int j = 0; j < Finish_num; j++)    // 직전까지 입력받은 정보를 반복하여 출력
@@ -72,26 +72,31 @@ namespace if_test
                         }
                         break;
                     }
-                    else if (Finish_answer == "Y")      // Y를 입력받으면 계속해서 반복문을 시행
+                    if (Finish_answer == "Y")      // Y를 입력받으면 계속해서 반복문을 시행
                     {
                         continue;
+
                     }
                 }
-                else                                    // Max_input과 입력받은 학생 수가 같아지면 종료
-                {
+
+                if (i >= Max_input)                // Max_input과 입력받은 학생 수가 같아지면 종료
+            {
                     Console.WriteLine("--------------------------------------------");
-                    Console.WriteLine("프로그램을 종료합니다");
+                    Console.WriteLine("프로그램을 종료합니다. 감사합니다.");
                     Console.WriteLine("--------------------------------------------");
 
-                    for (int j = 0; j < std_no.Length; j++)     // 입력받은 모든 정보를 반복하여 출력
+                    for (int j = 0; j < std_no.Length; j++)           // 입력받은 모든 정보를 반복하여 출력
                     {
                         Console.WriteLine("학과:{0}, 학번: {1}, 이름: {2}", std_major[j], std_no[j], std_name[j]);
                     }
-                }
+
+            }
+                
             }
         }
     }
 }
+
 //       012345678
 // 학번: 201702963
 // classno = number.Substring(4, 3);
